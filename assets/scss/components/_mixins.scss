@@ -1,0 +1,75 @@
+@use "sass:map";
+
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 767px) { @content; }
+  }
+
+  @else if $class == sm {
+    @media (min-width: 768px) { @content; }
+  }
+
+  @else if $class == md {
+    @media (min-width: 992px) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (min-width: 1200px) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+$me-font-sizes: ("xs": 14, "s": 16, "m": 19, "l": 27, "xl": 35, "xxl": 60);
+
+@mixin me-font-size($size) {
+
+  $pxSize: map.get($me-font-sizes, $size);
+
+  @media(max-width: 767px) {
+    @if $size == inherit {
+      font-size: inherit;
+    } @else if $pxSize > 19 {
+      font-size: #{$pxSize*0.666}px;
+    } @else {
+      font-size: $pxSize;
+    }
+  }
+
+  @media(min-width: 768px) {
+    @if $pxSize == inherit {
+      font-size: inherit;
+    } @else {
+      font-size: #{$pxSize}px;
+    }
+  }
+}
+
+$me-heading-font: 'Plus Jakarta Sans', 'Century Gothic', sans-serif;
+$me-body-font: 'Source Sans Pro', Calibri, Helvetica, Arial, sans-serif;
+
+@mixin me-font($size, $weight, $style, $family) {
+  @include me-font-size($size);
+  font-weight: $weight;
+  font-style: $style;
+  font-family: $family;
+}
+
+$me-heading-font-weights: ("normal": 400, "bold": 800);
+@mixin me-heading-font($size, $weight: "bold") {
+  @include me-font($size, map.get($me-heading-font-weights, $weight), "normal", $me-heading-font)
+}
+
+$me-body-font-weights: ("normal": 300, "bold": 600);
+@mixin me-body-font($size, $weight: "normal") {
+  @include me-font($size, map.get($me-body-font-weights, $weight), "normal", $me-body-font)
+}
+
+@mixin me-focusable() {
+  &:focus-visible {
+    outline: solid white 4px;
+    outline-offset: 4px;
+  }
+}

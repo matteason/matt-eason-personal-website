@@ -1,0 +1,89 @@
+@import 'colours';
+
+body {
+  background: $me-navy-blue;
+  color: $me-off-white;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+}
+
+.me-visually-hidden {
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  clip:rect(0 0 0 0) !important;
+  -webkit-clip-path:inset(50%) !important;
+  clip-path:inset(50%) !important;
+  border:0 !important;
+  white-space:nowrap !important
+}
+
+.me-page-header {
+  padding: me-gutter(2) 0 me-gutter(3) 0;
+  overflow: hidden;
+  position: relative;
+
+  &__logo {
+    @include me-heading-font('l');
+    text-transform: uppercase;
+    color: $me-navy-blue;
+    background: $me-yellow;
+    text-decoration: none;
+    padding: 0.4em 0.75em 0.5em 0.75em;
+  }
+}
+
+.me-hr {
+  border: none;
+  border-bottom: 6px solid $me-yellow;
+}
+
+.me-heading-section {
+  padding-bottom: me-gutter();
+}
+
+.me-page-footer {
+  padding: me-gutter(1) 0 me-gutter(3) 0;
+  overflow: hidden;
+  position: relative;
+
+  &__row {
+    padding-top: me-gutter(3);
+  }
+
+  &__logo {
+    @include me-heading-font('l');
+    text-transform: uppercase;
+    color: $me-navy-blue;
+    background: $me-yellow;
+    text-decoration: none;
+    padding: 0.4em 0.5em 0.5em 0.5em;
+  }
+}
+
+.nuxt-content {
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: me-gutter(2/3);
+
+    @include breakpoint(sm) {
+      margin-bottom: me-gutter(1);
+    }
+  }
+
+  iframe {
+    margin-bottom: me-gutter(2/3);
+
+    @include breakpoint(sm) {
+      margin-bottom: me-gutter(1);
+    }
+  }
+}
