@@ -1,30 +1,34 @@
+@use 'measurements';
+@use 'colours';
+@use 'mixins';
+
 .me-page-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-column-gap: me-gutter();
-  grid-row-gap: me-gutter();
-  padding-bottom: me-gutter();
+  grid-column-gap: measurements.me-gutter();
+  grid-row-gap: measurements.me-gutter();
+  padding-bottom: measurements.me-gutter();
 
-  @include breakpoint(md) {
+  @include mixins.breakpoint(md) {
     grid-template-columns: 1fr 1fr;
   }
 
-  $me-page-grid-card-padding: me-gutter();
-  $me-page-grid-card-padding-mobile: me-gutter(0.5);
+  $me-page-grid-card-padding: measurements.me-gutter();
+  $me-page-grid-card-padding-mobile: measurements.me-gutter(0.5);
 
   &__card {
-    background: $me-yellow;
+    background: colours.$me-yellow;
     padding: $me-page-grid-card-padding;
     text-decoration: none;
-    color: $me-navy-blue;
+    color: colours.$me-navy-blue;
 
-    @include breakpoint(xs) {
+    @include mixins.breakpoint(xs) {
       padding: $me-page-grid-card-padding-mobile
     }
   }
 
   &__page-image {
-    width: calc(100% + #{me-gutter(2)});
+    width: calc(100% + #{measurements.me-gutter(2)});
     height: 0;
     padding-top: 66.66%;
     background-size: cover;
@@ -32,23 +36,23 @@
     margin: -#{$me-page-grid-card-padding};
     margin-bottom: $me-page-grid-card-padding;
 
-    @include breakpoint(xs) {
-      width: calc(100% + #{me-gutter()});
+    @include mixins.breakpoint(xs) {
+      width: calc(100% + #{measurements.me-gutter()});
       margin: -#{$me-page-grid-card-padding-mobile};
       margin-bottom: $me-page-grid-card-padding-mobile;
     }
   }
 
   &__page-name {
-    color: $me-navy-blue;
+    color: colours.$me-navy-blue;
     text-decoration: none;
-    @include breakpoint(xs) {
-      margin-top: me-gutter(0.6)
+    @include mixins.breakpoint(xs) {
+      margin-top: measurements.me-gutter(0.6)
     }
   }
 
   &__page-description {
     margin: 0;
-    @include me-heading-font('l', 'normal')
+    @include mixins.me-heading-font('l', 'normal')
   }
 }

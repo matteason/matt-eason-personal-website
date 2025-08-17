@@ -51,10 +51,10 @@ $me-heading-font: 'Plus Jakarta Sans', 'Century Gothic', sans-serif;
 $me-body-font: 'Source Sans Pro', Calibri, Helvetica, Arial, sans-serif;
 
 @mixin me-font($size, $weight, $style, $family) {
-  @include me-font-size($size);
   font-weight: $weight;
   font-style: $style;
   font-family: $family;
+  @include me-font-size($size);
 }
 
 $me-heading-font-weights: ("normal": 400, "bold": 800);

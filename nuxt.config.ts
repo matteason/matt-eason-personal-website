@@ -6,5 +6,15 @@ export default defineNuxtConfig({
     documentDriven: true
   },
   modules: ['nuxt-content-assets', '@nuxt/content'],
-  css: ['@/assets/scss/main.scss', '@/assets/css/bootstrap-grid.min.css']
+  css: ['@/assets/scss/main.scss', '@/assets/css/bootstrap-grid.min.css'],
+  app: {
+    head: {
+      script: [
+        {
+          src: 'https://platform.twitter.com/widgets.js"',
+          async: true
+        }
+      ]
+    }
+  }
 })

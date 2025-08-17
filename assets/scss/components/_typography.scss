@@ -1,11 +1,13 @@
-@import 'measurements';
-@import 'colours';
-@import 'mixins';
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400,800&family=Source+Sans+3:wght@300;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@use 'measurements';
+@use 'colours';
+@use 'mixins';
+@use 'sass:math';
+
+//@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400,800&family=Source+Sans+3:wght@300;600&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 html, body, input, textarea, select, button {
-  @include me-body-font("m");
+  @include mixins.me-body-font("m");
 }
 
 .me-90s-mode {
@@ -15,45 +17,48 @@ html, body, input, textarea, select, button {
 
 .me-heading {
   &--xxl {
-    @include me-heading-font($size: 'xxl');
-    margin: me-gutter(1.5) 0 me-gutter() 0;
+    margin: measurements.me-gutter(1.5) 0 measurements.me-gutter() 0;
+    @include mixins.me-heading-font($size: 'xxl');
   }
 
   &--xl {
-    @include me-heading-font($size: 'xl');
-    margin: me-gutter(1.5) 0 me-gutter(2/3) 0;
+    margin: measurements.me-gutter(1.5) 0 measurements.me-gutter(math.div(2,3)) 0;
+    @include mixins.me-heading-font($size: 'xl');
   }
 
   &--l {
-    @include me-heading-font($size: 'l');
-    margin: me-gutter() 0 me-gutter(1/3) 0;
+    margin: measurements.me-gutter() 0 measurements.me-gutter(math.div(1,3)) 0;
+    @include mixins.me-heading-font($size: 'l');
   }
 
   &--m {
-    @include me-heading-font($size: 'm');
-    margin: me-gutter(2/3) 0 me-gutter(1/3) 0;
+    margin: measurements.me-gutter(math.div(1,3)) 0 measurements.me-gutter(math.div(1,3)) 0;
+    @include mixins.me-heading-font($size: 'm');
   }
 
-  &--s {     @include me-heading-font($size: 's');
+  &--s {
+    @include mixins.me-heading-font($size: 's');
   }
-  &--xs {     @include me-heading-font($size: 'xs');
+
+  &--xs {
+    @include mixins.me-heading-font($size: 'xs');
   }
 
   &--page-title {
-    color: $me-yellow;
-    @include breakpoint(xs) {
+    color: colours.$me-yellow;
+    @include mixins.breakpoint(xs) {
       margin-top: 0;
     }
   }
 }
 
 .me-subheading {
-  @include me-heading-font("xxl", "normal");
   display: block;
   color: white;
   opacity: 0.75;
   letter-spacing: 0;
-  margin-top: me-gutter(0.5);
+  margin-top: measurements.me-gutter(0.5);
+  @include mixins.me-heading-font("xxl", "normal");
 
   &--inline {
     display: inline;
@@ -65,18 +70,18 @@ html, body, input, textarea, select, button {
 }
 
 p {
-  margin-bottom: me-gutter(2/3);
+  margin-bottom: measurements.me-gutter(math.div(2,3));
   line-height: 1.6em;
 
-  @include breakpoint(sm) {
-    margin-bottom: me-gutter(1);
+  @include mixins.breakpoint(sm) {
+    margin-bottom: measurements.me-gutter(1);
   }
 }
 
 a {
-  color: $me-link-colour;
+  color: colours.$me-link-colour;
   text-decoration-thickness: 2px;
-  @include me-focusable;
+  @include mixins.me-focusable;
 }
 
 code {
@@ -115,21 +120,21 @@ code {
 
   ul {
     list-style-type: disc;
-    margin-bottom: me-gutter(2/3);
+    margin-bottom: measurements.me-gutter(math.div(2,3));
     padding-left: 1.5em;
 
-    @include breakpoint(sm) {
-      margin-bottom: me-gutter(1);
+    @include mixins.breakpoint(sm) {
+      margin-bottom: measurements.me-gutter(1);
     }
 
     li {
-      margin-bottom: me-gutter(1/2);
+      margin-bottom: measurements.me-gutter(math.div(1,2));
     }
   }
 
   .twitter-tweet:not(.twitter-tweet-rendered) {
-    border: 2px solid $me-grey;
-    padding: me-gutter(1);
-    margin-bottom: me-gutter(1);
+    border: 2px solid colours.$me-grey;
+    padding: measurements.me-gutter(1);
+    margin-bottom: measurements.me-gutter(1);
   }
 }

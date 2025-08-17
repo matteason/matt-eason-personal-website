@@ -1,8 +1,12 @@
-@import 'colours';
+@use 'colours';
+@use 'measurements';
+@use 'mixins';
+@use 'typography';
+@use 'sass:math';
 
 body {
-  background: $me-navy-blue;
-  color: $me-off-white;
+  background: colours.$me-navy-blue;
+  color: colours.$me-off-white;
   position: relative;
 }
 
@@ -25,45 +29,45 @@ img {
 }
 
 .me-page-header {
-  padding: me-gutter(2) 0 me-gutter(3) 0;
+  padding: measurements.me-gutter(2) 0 measurements.me-gutter(3) 0;
   overflow: hidden;
   position: relative;
 
   &__logo {
-    @include me-heading-font('l');
     text-transform: uppercase;
-    color: $me-navy-blue;
-    background: $me-yellow;
+    color: colours.$me-navy-blue;
+    background: colours.$me-yellow;
     text-decoration: none;
     padding: 0.4em 0.75em 0.5em 0.75em;
+    @include mixins.me-heading-font('l');
   }
 }
 
 .me-hr {
   border: none;
-  border-bottom: 6px solid $me-yellow;
+  border-bottom: 6px solid colours.$me-yellow;
 }
 
 .me-heading-section {
-  padding-bottom: me-gutter();
+  padding-bottom: measurements.me-gutter();
 }
 
 .me-page-footer {
-  padding: me-gutter(1) 0 me-gutter(3) 0;
+  padding: measurements.me-gutter(1) 0 measurements.me-gutter(3) 0;
   overflow: hidden;
   position: relative;
 
   &__row {
-    padding-top: me-gutter(3);
+    padding-top: measurements.me-gutter(3);
   }
 
   &__logo {
-    @include me-heading-font('l');
     text-transform: uppercase;
-    color: $me-navy-blue;
-    background: $me-yellow;
+    color: colours.$me-navy-blue;
+    background: colours.$me-yellow;
     text-decoration: none;
     padding: 0.4em 0.5em 0.5em 0.5em;
+    @include mixins.me-heading-font('l');
   }
 }
 
@@ -72,18 +76,18 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: me-gutter(2/3);
+    margin-bottom: measurements.me-gutter(math.div(2,3));
 
-    @include breakpoint(sm) {
-      margin-bottom: me-gutter(1);
+    @include mixins.breakpoint(sm) {
+      margin-bottom: measurements.me-gutter(1);
     }
   }
 
   iframe {
-    margin-bottom: me-gutter(2/3);
+    margin-bottom: measurements.me-gutter(math.div(2,3));
 
-    @include breakpoint(sm) {
-      margin-bottom: me-gutter(1);
+    @include mixins.breakpoint(sm) {
+      margin-bottom: measurements.me-gutter(1);
     }
   }
 }

@@ -1,10 +1,6 @@
-@import 'components/colours';
-@import 'components/measurements';
-@import 'components/mixins';
-@import 'components/reset';
-@import 'components/typography';
-@import 'components/layout';
-@import 'components/page-grid';
-@import 'components/buttons';
-@import 'components/toggle';
+@use 'components/reset';
+@use 'components/typography';
+@use 'components/layout';
+@use 'components/page-grid';
+@use 'components/buttons';
 
