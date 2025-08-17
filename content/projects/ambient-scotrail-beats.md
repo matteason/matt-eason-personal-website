@@ -1,11 +1,11 @@
 ---
 title: Ambient ScotRail Beats
 description: Lofi hip-hop and Scottish trains (it's better than it sounds)
-img: /projects/img/ambient-scotrail-beats/asb.png
+img: /content/projects/ambient-scotrail-beats/asb.png
 displayOrder: 20
 ---
 
-![Screenshot of Ambient ScotRail Beats. The background is a blurry manga illustration of a girl sat at a desk with headphones on. On top is a square containing various controls such as delay and announcement frequency, with a pause button below. At the bottom is the announcement currently playing: The electricity being switched off for safety reasons earlier on this train's journey.](/img/ambient-scotrail-beats/asb.png)
+![Screenshot of Ambient ScotRail Beats. The background is a blurry manga illustration of a girl sat at a desk with headphones on. On top is a square containing various controls such as delay and announcement frequency, with a pause button below. At the bottom is the announcement currently playing: The electricity being switched off for safety reasons earlier on this train's journey.](/content/projects/ambient-scotrail-beats/asb.png)
 
 Ambient ScotRail Beats layers snippets of Scottish train station announcements over lofi beats.
 

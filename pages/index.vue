@@ -4,18 +4,10 @@
       <Row class="me-heading-section">
         <Column css-class="col-md-8">
           <main>
-            <ClientOnly>
-              <h1 class="me-heading me-heading--xxl me-heading--page-title">
-                <a
-                  href="#"
-                  @click="shuffleThings"
-                  style="text-decoration: none"
-                  aria-description="Click to reshuffle things I am not"
-                  >{{ things[0] }}. {{ things[1] }}. {{ things[2] }}.</a
-                >
-                <span class="me-subheading me-subheading--inline"> I am none of these things.</span>
-              </h1>
-            </ClientOnly>
+            <h1 class="me-heading me-heading--xxl me-heading--page-title">
+              <span>{{ things[0] }}. {{ things[1] }}. {{ things[2] }}.</span>
+              <span class="me-subheading me-subheading--inline"> I am none of these things.</span>
+            </h1>
           </main>
         </Column>
         <Column css-class="col-md-4"></Column>
@@ -132,9 +124,9 @@ let things = ref([
 
 shuffle(things)
 
-function shuffleThings(e: Event) {
+function shuffleThings() {
+  console.log('foobar')
   shuffle(things)
-  e.preventDefault()
 }
 
 const projects = await queryContent('projects').sort({ displayOrder: 1 }).find()

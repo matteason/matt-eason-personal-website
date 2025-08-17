@@ -1,11 +1,11 @@
 ---
 title: Ambiphone
 description: Minimalist ambient music, soundscapes and white noise
-img: /projects/img/ambiphone/ambiphone.png
+img: /content/projects/ambiphone/ambiphone.png
 displayOrder: 10
 ---
 
-![Screenshot of Ambiphone. It has a navy blue background, with all text and icons a light gold. There's a grid of icons with the heading 'Nature' and icons labelled heavy rain, thunder, strong wind etc](/img/ambiphone/ambiphone.png)
+![Screenshot of Ambiphone. It has a navy blue background, with all text and icons a light gold. There's a grid of icons with the heading 'Nature' and icons labelled heavy rain, thunder, strong wind etc](/content/projects/ambiphone/ambiphone.png)
 
 Ambiphone an online white noise app designed to be beautiful, easy to use, and free.
 

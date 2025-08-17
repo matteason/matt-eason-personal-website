@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   content: {
     documentDriven: true
   },
-  modules: ['nuxt-content-assets', '@nuxt/content'],
+  modules: ['@nuxt/content'],
   css: ['@/assets/scss/main.scss', '@/assets/css/bootstrap-grid.min.css'],
   app: {
     head: {

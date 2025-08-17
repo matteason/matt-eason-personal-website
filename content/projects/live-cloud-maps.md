@@ -1,7 +1,7 @@
 ---
 title: Live cloud maps
 description: Near-real-time cloud maps of the whole Earth
-img: /projects/img/live-cloud-maps/live-cloud-maps.png
+img: /content/projects/live-cloud-maps/live-cloud-maps.png
 displayOrder: 23
 ---
 

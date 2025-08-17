@@ -1,11 +1,11 @@
 ---
 title: 3D ISS tracker
 description: A beautiful live ISS tracker
-img: /projects/img/iss-tracker/tracker.png
+img: /content/projects/iss-tracker/tracker.png
 displayOrder: 22
 ---
 
-![3D rendering of the Earth and moon. A lime green line and dot shows the position and path of the ISS, positioned southwest of Africa.](/img/iss-tracker/tracker.png)
+![3D rendering of the Earth and moon. A lime green line and dot shows the position and path of the ISS, positioned southwest of Africa.](/content/projects/iss-tracker/tracker.png)
 
 [Try the ISS tracker](https://iss.matteason.co.uk)
 
